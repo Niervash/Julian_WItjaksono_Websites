@@ -45,7 +45,7 @@ const ProjectDetailPage: React.FC = () => {
       <div className="min-h-screen flex flex-col items-center justify-center">
         <h2 className="text-2xl font-semibold mb-4">Project not found</h2>
         <Link
-          to="/projects"
+          to="/"
           className="text-orange-500 hover:text-orange-600 flex items-center gap-2"
         >
           <ArrowLeft size={20} />

@@ -9,7 +9,7 @@ const UsersRoute: React.FC<props> = ({}) => {
   return (
     <>
       <Routes location={location} key={location.pathname}>
-        <Route index element={<Navigate to="/" replace />} />
+        <Route index element={<Navigate to="/home" replace />} />
         <Route path="/home" element={<LandingPages />} />
         <Route path="/cv" element={<CVPages />} />
         <Route path="/projects/:id" element={<ProjectDetailPage />} />

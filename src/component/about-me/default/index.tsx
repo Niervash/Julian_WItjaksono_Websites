@@ -1,7 +1,7 @@
 import React from "react";
 import { IlovemySelf } from "../../../assets";
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 const AboutMe: React.FC = () => {
   return (

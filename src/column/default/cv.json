@@ -1,0 +1,51 @@
+{
+  "name": "Nama Lengkap",
+  "title": "Frontend Developer / Web Designer",
+  "contact": {
+    "email": "email@example.com",
+    "phone": "+62 812 3456 7890",
+    "location": "Jakarta, Indonesia",
+    "website": "https://example.com",
+    "linkedin": "linkedin.com/in/username",
+    "github": "github.com/username"
+  },
+  "summary": "Ringkasan profesional singkat tentang diri Anda. Misalnya: Saya adalah pengembang frontend dengan pengalaman 3 tahun dalam membangun aplikasi web modern menggunakan React dan Tailwind CSS.",
+  "experience": [
+    {
+      "company": "PT Maju Bersama",
+      "position": "Frontend Developer",
+      "startDate": "2022",
+      "endDate": "Sekarang",
+      "description": "Bertanggung jawab mengembangkan antarmuka pengguna menggunakan React, Tailwind CSS, dan Framer Motion."
+    },
+    {
+      "company": "Startup Kreatif",
+      "position": "Web Designer",
+      "startDate": "2020",
+      "endDate": "2022",
+      "description": "Mendesain dan membangun website responsif untuk klien."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Universitas Indonesia",
+      "degree": "Sarjana Komputer",
+      "field": "Ilmu Komputer",
+      "startYear": "2016",
+      "endYear": "2020"
+    }
+  ],
+  "skills": [
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Framer Motion",
+    "Next.js",
+    "UI/UX Design"
+  ],
+  "languages": [
+    { "name": "Indonesia", "level": "Native" },
+    { "name": "Inggris", "level": "Professional" }
+  ],
+  "certifications": []
+}

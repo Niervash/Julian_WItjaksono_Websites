@@ -1,11 +1,12 @@
 import React from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { CVPages, LandingPages } from "../../../pages/user-pages";
 import { ProjectDetailPage } from "../../../component";
 
 interface props {}
 
 const UsersRoute: React.FC<props> = ({}) => {
+  const location = useLocation();
   return (
     <>
       <Routes location={location} key={location.pathname}>

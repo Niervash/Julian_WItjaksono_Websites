@@ -1,9 +1,8 @@
-import { useRef } from "react";
 import { motion, useAnimationFrame, useMotionValue } from "framer-motion";
 import {
-  SiHtml5, SiCss3, SiTypescript, SiReact, SiTailwindcss, SiGit, SiDocker,
+  SiTypescript, SiReact, SiTailwindcss, SiGit, SiDocker,
   SiPython, SiTensorflow, SiPytorch, SiScikitlearn, SiPandas, SiNumpy,
-  SiJupyter, SiAnaconda, SiTableau, SiMysql, SiPostgresql,
+  SiTableau, SiPostgresql,
 } from "react-icons/si";
 
 const tools = [

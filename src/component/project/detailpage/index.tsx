@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ExternalLink, Github, Calendar, Layers, X } from "lucide-react";
+import { ArrowLeft, ExternalLink, Layers, X } from "lucide-react";
 import { projects } from "../../../column";
 import { UserLayout } from "../../../layout";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowLeft, Mail, Phone, MapPin, Linkedin, Globe, Download } from "lucide-react";
+import { ArrowLeft, Mail, MapPin, Linkedin, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import { UserLayout } from "../../../layout";
 import { motion } from "framer-motion";

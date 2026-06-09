@@ -1,140 +1,115 @@
+import React from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
-import { SocialMedia } from "../../social-media";
+import { Send, Mail, MapPin, Linkedin, Github } from "lucide-react";
 
-interface props {}
-const ContactSection: React.FC<props> = () => {
+const ContactSection: React.FC = () => {
   return (
-    <section className="py-16 px-4 bg-gray-50" id="contact">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Punya pertanyaan atau ingin bekerja sama? Silakan hubungi saya
-            melalui form di bawah.
-          </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Kolom Kiri - Form Kontak */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
+    <section id="contact" className="bg-slate-50 py-24 md:py-32">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        
+        <div className="grid lg:grid-cols-2 gap-24">
+          
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-12"
           >
-            <form
-              action="https://formspree.io/f/your-endpoint" // Ganti dengan endpoint Formspree Anda
-              method="POST"
-              className="bg-white p-6 rounded-xl shadow-md"
-            >
-              <div className="mb-4">
-                <label
-                  htmlFor="name"
-                  className="block text-gray-700 font-medium mb-2"
-                >
-                  Nama Lengkap
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-                />
-              </div>
-              <div className="mb-4">
-                <label
-                  htmlFor="email"
-                  className="block text-gray-700 font-medium mb-2"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-                />
-              </div>
-              <div className="mb-4">
-                <label
-                  htmlFor="subject"
-                  className="block text-gray-700 font-medium mb-2"
-                >
-                  Subjek
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-                />
-              </div>
-              <div className="mb-4">
-                <label
-                  htmlFor="message"
-                  className="block text-gray-700 font-medium mb-2"
-                >
-                  Pesan
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition flex items-center justify-center gap-2"
-              >
-                <Send size={18} />
-                Kirim Pesan
-              </button>
-            </form>
-          </motion.div>
+            <div className="space-y-4">
+              <span className="text-xs uppercase tracking-[0.3em] text-accent font-medium block">
+                Contact
+              </span>
+              <h2 className="text-4xl md:text-6xl font-serif">
+                Let's discuss <br />
+                <span className="italic font-normal">your vision.</span>
+              </h2>
+              <p className="text-slate-500 font-light text-lg leading-relaxed max-w-md pt-4">
+                I am always open to discussing innovative projects, AI research opportunities, or technical partnerships.
+              </p>
+            </div>
 
-          {/* Kolom Kanan - Info Kontak & Media Sosial */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="flex flex-col justify-center space-y-6"
-          >
-            {/* Informasi Kontak */}
-            <div className="bg-white p-6 rounded-xl shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Informasi Kontak</h3>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 text-gray-700">
-                  <Mail className="text-orange-500" size={20} />
-                  <span>email@contoh.com</span>
+            <div className="space-y-8 pt-8">
+              <div className="flex items-center gap-6 group">
+                <div className="p-4 bg-white shadow-sm border border-slate-100 rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                  <Mail size={20} />
                 </div>
-                <div className="flex items-center gap-3 text-gray-700">
-                  <Phone className="text-orange-500" size={20} />
-                  <span>+62 812 3456 7890</span>
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-accent font-bold">Email</p>
+                  <p className="text-primary font-medium">julian.witjaksono@example.com</p>
                 </div>
-                <div className="flex items-center gap-3 text-gray-700">
-                  <MapPin className="text-orange-500" size={20} />
-                  <span>Jakarta, Indonesia</span>
+              </div>
+              <div className="flex items-center gap-6 group">
+                <div className="p-4 bg-white shadow-sm border border-slate-100 rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                  <MapPin size={20} />
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-widest text-accent font-bold">Location</p>
+                  <p className="text-primary font-medium">Jakarta, Indonesia</p>
                 </div>
               </div>
             </div>
 
-            {/* Media Sosial */}
-            <SocialMedia />
+            <div className="flex items-center gap-8 pt-4">
+              <a href="#" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2 text-sm uppercase tracking-widest font-bold">
+                <Linkedin size={18} /> LinkedIn
+              </a>
+              <a href="#" className="text-slate-400 hover:text-primary transition-colors flex items-center gap-2 text-sm uppercase tracking-widest font-bold">
+                <Github size={18} /> GitHub
+              </a>
+            </div>
           </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="bg-white p-8 md:p-12 shadow-2xl shadow-slate-200/50"
+          >
+            <form className="space-y-8">
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-2">
+                  <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-accent">Full Name</label>
+                  <input 
+                    type="text" 
+                    className="w-full bg-transparent border-b border-slate-200 py-3 focus:outline-none focus:border-primary transition-colors font-light"
+                    placeholder="John Doe"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-accent">Email Address</label>
+                  <input 
+                    type="email" 
+                    className="w-full bg-transparent border-b border-slate-200 py-3 focus:outline-none focus:border-primary transition-colors font-light"
+                    placeholder="john@example.com"
+                  />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-accent">Subject</label>
+                <input 
+                  type="text" 
+                  className="w-full bg-transparent border-b border-slate-200 py-3 focus:outline-none focus:border-primary transition-colors font-light"
+                  placeholder="Project Inquiry"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-accent">Message</label>
+                <textarea 
+                  rows={4}
+                  className="w-full bg-transparent border-b border-slate-200 py-3 focus:outline-none focus:border-primary transition-colors font-light resize-none"
+                  placeholder="Tell me about your project..."
+                />
+              </div>
+              <button 
+                type="submit"
+                className="w-full bg-primary text-white py-5 px-8 uppercase tracking-[0.3em] text-xs font-bold hover:bg-secondary transition-all duration-300 flex items-center justify-center gap-3 group"
+              >
+                Send Message
+                <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </button>
+            </form>
+          </motion.div>
+
         </div>
       </div>
     </section>

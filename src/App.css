@@ -2,7 +2,31 @@
 @source "../node_modules/flowbite";
 @plugin "flowbite/plugin";
 
-/* Theme */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-@import "flowbite/src/themes/minimal";@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-@import "flowbite/src/themes/minimal";
+@theme {
+  --color-primary: #0f172a;
+  --color-secondary: #334155;
+  --color-accent: #64748b;
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+/* Custom Base Styles */
+@layer base {
+  body {
+    @apply font-sans text-secondary bg-white;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif text-primary tracking-tight;
+  }
+}
+
+/* Elegant Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-50;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full hover:bg-slate-400 transition-colors;
+}

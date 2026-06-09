@@ -1,81 +1,35 @@
 import { useRef } from "react";
 import { motion, useAnimationFrame, useMotionValue } from "framer-motion";
 import {
-  // Web Development Essentials
-  SiHtml5,
-  SiCss3,
-  SiTypescript,
-  SiReact,
-  SiTailwindcss,
-  SiGit,
-  SiDocker,
-
-  // Data Science & ML Languages
-  SiPython,
-
-  // ML Frameworks & Libraries
-  SiTensorflow,
-  SiPytorch,
-  SiScikitlearn,
-  SiPandas,
-  SiNumpy,
-
-  // Development Environment & Tools
-  SiJupyter,
-  SiAnaconda,
-
-  // Visualization & BI
-  SiTableau,
-
-  // Databases
-  SiMysql,
-  SiPostgresql,
+  SiHtml5, SiCss3, SiTypescript, SiReact, SiTailwindcss, SiGit, SiDocker,
+  SiPython, SiTensorflow, SiPytorch, SiScikitlearn, SiPandas, SiNumpy,
+  SiJupyter, SiAnaconda, SiTableau, SiMysql, SiPostgresql,
 } from "react-icons/si";
 
 const tools = [
-  // Web Development Essentials (untuk deployment/dashboard)
-  { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
-  { name: "CSS3", icon: SiCss3, color: "#1572B6" },
-
-  { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-  { name: "React", icon: SiReact, color: "#61DAFB" },
-  { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
-  { name: "Git", icon: SiGit, color: "#F05032" },
-  { name: "Docker", icon: SiDocker, color: "#2496ED" },
-
-  // Data Science & Machine Learning
-  { name: "Python", icon: SiPython, color: "#3776AB" },
-
-  { name: "TensorFlow", icon: SiTensorflow, color: "#FF6F00" },
-  { name: "PyTorch", icon: SiPytorch, color: "#EE4C2C" },
-  { name: "Scikit-learn", icon: SiScikitlearn, color: "#F7931E" },
-  { name: "Pandas", icon: SiPandas, color: "#150458" },
-  { name: "NumPy", icon: SiNumpy, color: "#013243" },
-  { name: "Jupyter", icon: SiJupyter, color: "#F37626" },
-  { name: "Anaconda", icon: SiAnaconda, color: "#44A833" },
-
-  // Visualisasi Data
-  { name: "Tableau", icon: SiTableau, color: "#E97627" },
-
-  // Database
-  { name: "MySQL", icon: SiMysql, color: "#4479A1" },
-  { name: "PostgreSQL", icon: SiPostgresql, color: "#336791" },
+  { name: "Python", icon: SiPython },
+  { name: "TypeScript", icon: SiTypescript },
+  { name: "React", icon: SiReact },
+  { name: "TensorFlow", icon: SiTensorflow },
+  { name: "PyTorch", icon: SiPytorch },
+  { name: "Scikit-learn", icon: SiScikitlearn },
+  { name: "Tailwind CSS", icon: SiTailwindcss },
+  { name: "PostgreSQL", icon: SiPostgresql },
+  { name: "Docker", icon: SiDocker },
+  { name: "Git", icon: SiGit },
+  { name: "Pandas", icon: SiPandas },
+  { name: "NumPy", icon: SiNumpy },
+  { name: "Tableau", icon: SiTableau },
 ];
 
 const ToolsCarousel: React.FC = () => {
-  const baseWidth = 120; // lebar per item (icon + nama) dalam px
+  const baseWidth = 160; 
   const totalWidth = tools.length * baseWidth;
-  const duplicateCount = 2; // jumlah duplikasi
-
   const x = useMotionValue(0);
-  const containerRef = useRef(null);
 
   useAnimationFrame(() => {
-    // Kecepatan scroll (piksel per frame)
-    const speed = 0.3;
+    const speed = 0.5;
     const newX = x.get() - speed;
-
-    // Reset ke 0 jika sudah mencapai setengah dari total lebar (agar loop seamless)
     if (newX <= -totalWidth) {
       x.set(0);
     } else {
@@ -84,40 +38,38 @@ const ToolsCarousel: React.FC = () => {
   });
 
   return (
-    <div className="w-full overflow-hidden bg-white py-8">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8">
-          Tools & Technologies
-        </h2>
-        <div
-          ref={containerRef}
-          className="relative"
-          style={{
-            maskImage:
-              "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-          }}
-        >
-          <motion.div className="flex gap-8 items-center" style={{ x }}>
-            {/* Duplikasi tools agar loop terlihat seamless */}
-            {[...Array(duplicateCount)].flatMap((_, i) =>
-              tools.map((tool, index) => (
-                <div
-                  key={`${tool.name}-${i}-${index}`}
-                  className="flex flex-col items-center justify-center shrink-0"
-                  style={{ width: baseWidth }}
-                >
-                  <tool.icon
-                    className="w-12 h-12 mb-2"
-                    style={{ color: tool.color }}
-                  />
-                  <span className="text-sm font-medium text-gray-700">
-                    {tool.name}
-                  </span>
-                </div>
-              )),
-            )}
-          </motion.div>
+    <div className="w-full bg-slate-50 py-20 border-y border-slate-100 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16">
+        <div className="flex flex-col items-center space-y-4">
+          <span className="text-[10px] uppercase tracking-[0.4em] text-accent font-bold">Expertise</span>
+          <h2 className="text-3xl md:text-4xl font-serif text-center">Toolkit & Technologies</h2>
         </div>
+      </div>
+      
+      <div
+        className="relative"
+        style={{
+          maskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent)",
+        }}
+      >
+        <motion.div className="flex items-center" style={{ x }}>
+          {[...Array(3)].flatMap((_, i) =>
+            tools.map((tool, index) => (
+              <div
+                key={`${tool.name}-${i}-${index}`}
+                className="flex flex-col items-center justify-center shrink-0 group transition-all duration-500"
+                style={{ width: baseWidth }}
+              >
+                <div className="p-6 bg-white border border-slate-100 shadow-sm group-hover:shadow-md group-hover:border-primary/20 group-hover:-translate-y-1 transition-all duration-300">
+                  <tool.icon className="w-10 h-10 text-slate-400 group-hover:text-primary transition-colors duration-300" />
+                </div>
+                <span className="mt-4 text-[10px] uppercase tracking-widest font-bold text-slate-400 group-hover:text-primary transition-colors duration-300">
+                  {tool.name}
+                </span>
+              </div>
+            )),
+          )}
+        </motion.div>
       </div>
     </div>
   );

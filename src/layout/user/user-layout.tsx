@@ -7,11 +7,11 @@ interface props {
 
 const UserLayout: React.FC<props> = ({ children }) => {
   return (
-    <div>
+    <div className="min-h-screen flex flex-col bg-white selection:bg-primary selection:text-white">
       <NavbarMain />
-      <section className="mt-10 relative min-h-screen hero-gradient overflow-hidden ">
+      <main className="flex-grow">
         {children}
-      </section>
+      </main>
       <Footer />
     </div>
   );

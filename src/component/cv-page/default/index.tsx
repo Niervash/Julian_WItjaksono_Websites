@@ -1,120 +1,114 @@
-import { ChevronLeft } from "lucide-react";
 import React from "react";
+import { ArrowLeft, Mail, Phone, MapPin, Linkedin, Globe, Download } from "lucide-react";
 import { Link } from "react-router-dom";
+import { UserLayout } from "../../../layout";
+import { motion } from "framer-motion";
 
 const CVPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-white text-black py-10">
-      <div>
-        <Link
-          to={"/"}
-          className="inline-flex ml-5 mb-5 sm:ml-10 text-black hover:text-blue-700 transition"
-        >
-          <ChevronLeft size={20} className="mr-2" />
-          Back to Home
-        </Link>
-      </div>
-      <div className="w-full max-w-screen-xl mx-auto px-6 md:px-16 lg:px-24 font-sans text-base leading-relaxed">
-        {/* NAME */}
-        <h1 className="text-3xl font-bold text-center uppercase">John Doe</h1>
-        <p className="text-center mb-4">Frontend Developer & UI Designer</p>
+    <UserLayout>
+      <section className="bg-slate-50 pt-32 pb-24 min-h-screen">
+        <div className="max-w-5xl mx-auto px-6 md:px-12">
+          
+          <Link to="/home" className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-accent hover:text-primary transition-colors mb-12 group">
+            <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+            Back to Home
+          </Link>
 
-        {/* CONTACT */}
-        <div className="text-center text-sm mb-8">
-          john.doe@example.com | +62 812 3456 7890 | Jakarta, Indonesia |
-          johndoe.dev | linkedin.com/in/johndoe | github.com/johndoe
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="bg-white shadow-2xl shadow-slate-200/50 p-8 md:p-16 space-y-16"
+          >
+            {/* Header */}
+            <div className="flex flex-col md:flex-row justify-between items-start gap-8 border-b border-slate-100 pb-12">
+              <div className="space-y-4">
+                <h1 className="text-4xl md:text-5xl font-serif">Julian Witjaksono</h1>
+                <p className="text-lg text-accent font-light tracking-widest uppercase">Computer Scientist & A.I. Specialist</p>
+              </div>
+              <div className="grid grid-cols-1 gap-3 text-sm text-slate-500 font-light">
+                <div className="flex items-center gap-3"><Mail size={14} className="text-primary" /> julian.witjaksono@example.com</div>
+                <div className="flex items-center gap-3"><MapPin size={14} className="text-primary" /> Jakarta, Indonesia</div>
+                <div className="flex items-center gap-3"><Linkedin size={14} className="text-primary" /> linkedin.com/in/julian-w</div>
+              </div>
+            </div>
+
+            {/* Summary */}
+            <div className="grid md:grid-cols-3 gap-8">
+              <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-primary">Professional Summary</h2>
+              <div className="md:col-span-2">
+                <p className="text-slate-600 font-light leading-relaxed">
+                  Computer Science graduate specializing in Artificial Intelligence, Machine Learning, and Full-Stack Development. 
+                  Experienced in building computer vision models, AI-powered applications, and robust web systems. 
+                  Passion for mentoring and technical education, combined with a strong foundation in robotic systems.
+                </p>
+              </div>
+            </div>
+
+            {/* Experience */}
+            <div className="grid md:grid-cols-3 gap-8">
+              <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-primary">Core Expertise</h2>
+              <div className="md:col-span-2 space-y-12">
+                <div className="space-y-4">
+                  <div className="flex justify-between items-end">
+                    <h3 className="text-xl font-serif">A.I. & Machine Learning</h3>
+                    <span className="text-xs text-accent italic">Specialization</span>
+                  </div>
+                  <p className="text-slate-600 font-light leading-relaxed">
+                    Developing and deploying neural networks using TensorFlow and PyTorch. 
+                    Expertise in Computer Vision, predictive modeling, and data analysis pipelines.
+                  </p>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-end">
+                    <h3 className="text-xl font-serif">Web Engineering</h3>
+                    <span className="text-xs text-accent italic">Full-Stack</span>
+                  </div>
+                  <p className="text-slate-600 font-light leading-relaxed">
+                    Architecting modern web applications with React, TypeScript, and Node.js. 
+                    Focus on performance, scalability, and elegant user interfaces.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Education */}
+            <div className="grid md:grid-cols-3 gap-8">
+              <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-primary">Education</h2>
+              <div className="md:col-span-2">
+                <div className="flex justify-between items-start">
+                  <div className="space-y-1">
+                    <h3 className="text-lg font-serif">Bachelor of Computer Science</h3>
+                    <p className="text-slate-500 font-light text-sm italic">Major in Artificial Intelligence</p>
+                  </div>
+                  <span className="text-xs font-bold text-primary uppercase tracking-tighter">Graduated</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Skills */}
+            <div className="grid md:grid-cols-3 gap-8">
+              <h2 className="text-xs uppercase tracking-[0.3em] font-bold text-primary">Technical Stack</h2>
+              <div className="md:col-span-2">
+                <div className="flex flex-wrap gap-x-8 gap-y-4">
+                  {["Python", "TensorFlow", "React", "TypeScript", "Node.js", "PostgreSQL", "Docker", "Git"].map(skill => (
+                    <span key={skill} className="text-sm text-slate-600 font-light border-b border-slate-100 pb-1">{skill}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Footer */}
+            <div className="pt-12 border-t border-slate-100 text-center">
+              <button className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white text-xs uppercase tracking-[0.3em] font-bold hover:bg-secondary transition-all duration-300">
+                <Download size={16} /> Download Full Resume
+              </button>
+            </div>
+
+          </motion.div>
         </div>
-
-        {/* SUMMARY */}
-        <section className="mb-8">
-          <h2 className="font-bold uppercase border-b border-black pb-1 mb-3">
-            Professional Summary
-          </h2>
-          <p>
-            Frontend Developer dengan 4+ tahun pengalaman membangun aplikasi web
-            responsif dan interaktif. Menguasai React, TypeScript, dan Tailwind
-            CSS.
-          </p>
-        </section>
-
-        {/* EXPERIENCE */}
-        <section className="mb-8">
-          <h2 className="font-bold uppercase border-b border-black pb-1 mb-3">
-            Work Experience
-          </h2>
-
-          <div className="mb-6">
-            <div className="flex flex-col md:flex-row md:justify-between">
-              <strong>Senior Frontend Developer</strong>
-              <span>2022 - Present</span>
-            </div>
-            <div className="italic">PT Teknologi Maju</div>
-            <ul className="list-disc list-inside mt-2">
-              <li>
-                Memimpin pengembangan frontend untuk aplikasi dashboard
-                perusahaan.
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <div className="flex flex-col md:flex-row md:justify-between">
-              <strong>Frontend Developer</strong>
-              <span>2020 - 2022</span>
-            </div>
-            <div className="italic">Startup Kreatif</div>
-            <ul className="list-disc list-inside mt-2">
-              <li>Mengembangkan website company profile dan e-commerce.</li>
-            </ul>
-          </div>
-        </section>
-
-        {/* EDUCATION */}
-        <section className="mb-8">
-          <h2 className="font-bold uppercase border-b border-black pb-1 mb-3">
-            Education
-          </h2>
-
-          <div>
-            <div className="flex flex-col md:flex-row md:justify-between">
-              <strong>Sarjana Komputer - Ilmu Komputer</strong>
-              <span>2016 - 2020</span>
-            </div>
-            <div className="italic">Universitas Gadjah Mada</div>
-          </div>
-        </section>
-
-        {/* SKILLS */}
-        <section className="mb-8">
-          <h2 className="font-bold uppercase border-b border-black pb-1 mb-3">
-            Skills
-          </h2>
-          <p>React, TypeScript, Tailwind CSS, JavaScript, Next.js, Git</p>
-        </section>
-
-        {/* LANGUAGES */}
-        <section className="mb-8">
-          <h2 className="font-bold uppercase border-b border-black pb-1 mb-3">
-            Languages
-          </h2>
-          <ul className="list-disc list-inside">
-            <li>Indonesia – Native</li>
-            <li>Inggris – Professional (TOEFL 600)</li>
-          </ul>
-        </section>
-
-        {/* CERTIFICATIONS */}
-        <section>
-          <h2 className="font-bold uppercase border-b border-black pb-1 mb-3">
-            Certifications
-          </h2>
-          <ul className="list-disc list-inside">
-            <li>Certified React Developer (2023)</li>
-            <li>UI/UX Design Specialization (2022)</li>
-          </ul>
-        </section>
-      </div>
-    </div>
+      </section>
+    </UserLayout>
   );
 };
 

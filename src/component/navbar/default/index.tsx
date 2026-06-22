@@ -23,7 +23,7 @@ const NavbarMain: React.FC = () => {
   const menuItems = [
     { path: "/home", label: "Home" },
     {
-      path: "/https://ai-powered-document-intelligence-sy.vercel.app",
+      path: "https://ai-powered-document-intelligence-sy.vercel.app",
       label: "Project",
     },
     { path: "/cv", label: "Curriculum Vitae" },
